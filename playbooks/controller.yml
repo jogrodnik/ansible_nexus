@@ -1,0 +1,9 @@
+---
+- name: Configure Controler
+  hosts: controller
+  become: true
+  tasks:
+  - name: Run Shell
+    shell: echo "Ansible Controller"
+  - name: Install Ansible
+    yum: name=eap-release state=latest

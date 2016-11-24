@@ -1,0 +1,14 @@
+---
+- name: Configure Nexus 3.0
+  hosts: nexuses
+  become: true
+  vars:
+    nexus_version: '3.1.0-04'
+    nexus_timezone: 'Canada/Eastern'
+  tasks:
+  - name: Run Shell
+    shell: echo "Ansible Controller"
+  roles:
+    - role: ansiblebit.oracle-java
+      oracle_java_set_as_default: yes
+    - role: savoirfairelinux.nexus3-oss
